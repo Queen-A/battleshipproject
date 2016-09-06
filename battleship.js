@@ -2,6 +2,7 @@
 var rows = 10;
 var cols = 10;
 var squareSize = 50;
+var hit = 0;
 
 // gets the container element
 var gameBoardContainer = document.getElementById("gameboard");
@@ -69,11 +70,16 @@ var row = letterConversion[rowLetter]
 if(gameBoard[row][column - 1] == 1)
 {
 	console.log("Hit");
-	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "blue";
+	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "whitesmoke";
 }
 else
 {
 	console.log("Miss");
 	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "black";
+}
+var hitCount = 0;
+if(hit >= 17)
+{
+	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS!");
 }
 }
