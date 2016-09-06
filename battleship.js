@@ -21,6 +21,7 @@ var letterConversion = {
 	"J": 9
 }
 
+	var letterArray = ["A","B","C","D","E","F","G","H","I","J"]
 // makes the grid columns and rows
 for (i = 0; i < cols; i++) {
 	for (j = 0; j < rows; j++) {
@@ -33,8 +34,8 @@ for (i = 0; i < cols; i++) {
 		square.id = 's' + j + i;
 		square.className = "boardSquare";
 
-		square.textContent = i,j;
-		letterArray = ["A","B","C","D","E","F","G","H","I","J"]
+		square.textContent = letterArray[j] + (i + 1);
+
 
 		// set each grid square's coordinates: multiples of the current row or column number
 		var topPosition = j * squareSize;
@@ -61,7 +62,18 @@ var gameBoard = [
 				]
 
 function fireTorpedo() {
-
-	// Your game logic will go here!
-
+var userInput = document.getElementById('userInput').value;
+var rowLetter = userInput.substring(0,1)
+var column = userInput.substring(1,3)
+var row = letterConversion[rowLetter]
+if(gameBoard[row][column - 1] == 1)
+{
+	console.log("Hit");
+	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "blue";
+}
+else
+{
+	console.log("Miss");
+	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "black";
+}
 }
