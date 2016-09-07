@@ -62,6 +62,9 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
+var overLay = $('<div = "overLay"> Game Over </div>')
+
+
 function fireTorpedo() {
 var userInput = document.getElementById('userInput').value;
 var rowLetter = userInput.substring(0,1)
@@ -81,5 +84,6 @@ var hitCount = 0;
 if(hit >= 17)
 {
 	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS!");
+	overLay.appendTo(document.body);
 }
 }
