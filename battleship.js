@@ -62,7 +62,7 @@ var gameBoard = [
 				[1,0,0,0,0,0,0,0,0,0]
 				]
 
-var overLay = $('<div = "overLay"> Game Over </div>')
+var overLay = $('<div id = "overLay"> Game Over </div>')
 
 
 function fireTorpedo() {
@@ -74,15 +74,16 @@ if(gameBoard[row][column - 1] == 1)
 {
 	console.log("Hit");
 	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "whitesmoke";
+	hit += 1;
 }
 else
 {
 	console.log("Miss");
 	document.getElementById("s" + row + (column - 1)).style.backgroundColor = "black";
 }
-var hitCount = 0;
-if(hit >= 17)
-{
+
+if (hit == 17) {
+
 	$("#instructions").text("YOU SUNK ALL MY BATTLESHIPS!");
 	overLay.appendTo(document.body);
 }

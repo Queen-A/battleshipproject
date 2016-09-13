@@ -50,3 +50,17 @@ p, button, input {
   margin:0 auto 2em auto;
   width:500px;
 }
+
+#overLay {
+position: fixed;
+font-size: 3em;
+top: 0;
+width:500px;
+height: 500px;
+z-index: 500;
+color:#990033;
+font-family:'Permanent Marker', cursive;
+text-align: center;
+
+
+}
